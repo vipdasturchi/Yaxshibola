@@ -106,7 +106,7 @@ export function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
             <GlassCard depth="medium" className="text-center">
               <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                1000+
+                50+
               </div>
               <p className="text-gray-600 dark:text-gray-400">Tugatilgan loyihalar</p>
             </GlassCard>
