@@ -11,18 +11,12 @@
      BotFather dan token oling, chat_id ni @userinfobot orqali biling.
      Yoki backend webhook URL ishlating.
   */
-  const TELEGRAM_CONFIG = {
-    // Variant 1: To'g'ridan-to'g'ri Telegram Bot API (faqat test uchun)
-    // token: 'YOUR_BOT_TOKEN',
-    // chatId: 'YOUR_CHAT_ID',
-
-    // Variant 2: O'z backend / webhook (tavsiya etiladi)
-    // Masalan: https://yaxshibola.uz/api/contact yoki Cloudflare Worker
-    endpoint: '', // Bo'sh qoldiring — keyin to'ldirasiz
-
-    // Hozircha demo rejim (endpoint bo'sh bo'lsa success ko'rsatadi)
-    demoMode: true
-  };
+const TELEGRAM_CONFIG = {
+  token: '8729764909:AAF73IXj4x9vLq-cMmd6Hj5x3pJeYhoBqxU',  // o'zingizniki
+  chatId: '8832272015',   // o'zingizniki
+  endpoint: '',
+  demoMode: false        // muhim: false qiling
+};
 
   /* ---------- LOADER ---------- */
   const loader = document.getElementById('loader');
