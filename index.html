@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#04060B" />
+  <meta name="color-scheme" content="dark" />
+  <title>Sardorbek — Web Dasturchi & Web Dizayner | Telegram botlar va veb-saytlar</title>
+  <meta name="description" content="Sardorbek — Namangandan web dasturchi va dizayner. Mukammal Telegram botlar, web saytlar va brending dizaynlar yarataman." />
+  <meta name="keywords" content="Sardorbek, Web Dasturchi, Telegram bot, Web Dizayner, Namangan, Portfolio, React, Next.js, Node.js" />
+  <meta name="author" content="Sardorbek" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yaxshibola.uz/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yaxshibola.uz/" />
+  <meta property="og:title" content="Sardorbek — Web Dasturchi & Web Dizayner" />
+  <meta property="og:description" content="Mukammal Telegram botlar va web saytlar yasayman. Brendingingiz uchun dizayn yarataman." />
+  <meta property="og:locale" content="uz_UZ" />
+  <meta property="og:site_name" content="Sardorbek Portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sardorbek — Web Dasturchi & Web Dizayner" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Sardorbek","url":"https://yaxshibola.uz","jobTitle":"Web Dasturchi va Web Dizayner","email":"Sardorbektexno@gmail.com","telephone":"+998940890907","address":{"@type":"PostalAddress","addressLocality":"Namangan","addressCountry":"UZ"},"knowsAbout":["Telegram Bot","Web Development","UI/UX Design","React","Next.js","Node.js"]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2304060B'/><text y='68' x='50' text-anchor='middle' font-size='48' font-family='system-ui' font-weight='700' fill='%2300D9FF'>S</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__logo">
+        <span class="loader__logo-mark">S</span>
+        <span class="loader__logo-text">Sardorbek</span>
+      </div>
+      <div class="loader__bar"><div class="loader__progress" id="loaderProgress"></div></div>
+      <div class="loader__percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <div class="bg" aria-hidden="true">
+    <div class="bg__aurora"></div>
+    <div class="bg__mesh"></div>
+    <canvas id="particles" class="bg__particles"></canvas>
+    <div class="bg__noise"></div>
+    <div class="bg__orbs">
+      <div class="orb orb--1"></div>
+      <div class="orb orb--2"></div>
+      <div class="orb orb--3"></div>
+      <div class="orb orb--4"></div>
+    </div>
+    <div class="bg__spotlight" id="spotlight"></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#home" class="nav__logo" aria-label="Bosh sahifa">
+        <span class="nav__logo-mark">S</span>
+        <span class="nav__logo-text">Sardorbek</span>
+      </a>
+      <nav class="nav__menu" id="navMenu" aria-label="Asosiy menyu">
+        <a href="#home" class="nav__link active" data-section="home">Bosh sahifa</a>
+        <a href="#about" class="nav__link" data-section="about">Men haqimda</a>
+        <a href="#skills" class="nav__link" data-section="skills">Ko'nikmalar</a>
+        <a href="#projects" class="nav__link" data-section="projects">Loyihalar</a>
+        <a href="#experience" class="nav__link" data-section="experience">Tajriba</a>
+        <a href="#contact" class="nav__link" data-section="contact">Bog'lanish</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#contact" class="btn btn--ghost btn--sm nav__cta">CV yuklab olish</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menyuni ochish" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero__container">
+        <div class="hero__content">
+          <div class="hero__badge reveal">
+            <span class="hero__badge-dot"></span>
+            Yangi loyihalar uchun ochiqman
+          </div>
+          <p class="hero__greeting reveal">✨ Xush kelibsiz mening portfolio saytimga</p>
+          <h1 class="hero__title reveal">
+            <span class="hero__name">Salom, Men</span>
+            <span class="hero__name hero__name--accent">Sardorbek</span>
+          </h1>
+          <h2 class="hero__role reveal">
+            <span class="hero__role-static">Web Dasturchi &amp;</span>
+            <span class="hero__role-typed" id="typedRole">Web Dizayner</span>
+          </h2>
+          <p class="hero__desc reveal">
+            Men mukammal bo'lgan Telegram botlar va web saytlar yasayman, va sizning brendingiz uchun dizayn yarataman.
+          </p>
+          <div class="hero__actions reveal">
+            <a href="#projects" class="btn btn--primary magnetic">
+              <span>Portfolioni ko'rish</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--outline magnetic">Bog'lanish</a>
+          </div>
+          <div class="hero__stats reveal">
+            <div class="hero__stat">
+              <span class="hero__stat-num" data-count="15">0</span>+
+              <span class="hero__stat-label">Loyihalar</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-num" data-count="4">0</span>+
+              <span class="hero__stat-label">Yil tajriba</span>
+            </div>
+            <div class="hero__stat">
+              <span class="hero__stat-num" data-count="10">0</span>+
+              <span class="hero__stat-label">Mijozlar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="workspace">
+            <div class="workspace__laptop" data-depth="0.08">
+              <div class="laptop">
+                <div class="laptop__screen">
+                  <div class="laptop__chrome"><span></span><span></span><span></span></div>
+                  <div class="laptop__code">
+                    <pre><code><span class="c-keyword">const</span> <span class="c-var">dasturchi</span> = {
+  <span class="c-key">ism</span>: <span class="c-str">"Sardorbek"</span>,
+  <span class="c-key">kasb</span>: <span class="c-str">"Web Dasturchi"</span>,
+  <span class="c-key">stack</span>: [<span class="c-str">"React"</span>, <span class="c-str">"Node"</span>, <span class="c-str">"Bot"</span>],
+  <span class="c-key">joy</span>: <span class="c-str">"Namangan"</span>
+};</code></pre>
+                  </div>
+                </div>
+                <div class="laptop__base"></div>
+              </div>
+            </div>
+            <div class="workspace__terminal" data-depth="0.15">
+              <div class="terminal">
+                <div class="terminal__bar">
+                  <span></span><span></span><span></span>
+                  <span class="terminal__title">zsh — sardorbek</span>
+                </div>
+                <div class="terminal__body">
+                  <div class="terminal__line"><span class="t-prompt">➜</span> <span class="t-cmd">npm run build</span></div>
+                  <div class="terminal__line t-success">✓ Muvaffaqiyatli yig'ildi</div>
+                  <div class="terminal__line"><span class="t-prompt">➜</span> <span class="t-cmd">bot start</span></div>
+                  <div class="terminal__line t-dim">Bot ishga tushdi...</div>
+                  <div class="terminal__line"><span class="t-prompt">➜</span> <span class="t-cursor">_</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="workspace__github" data-depth="0.12">
+              <div class="gh-card">
+                <div class="gh-card__header">
+                  <div class="gh-card__avatar">S</div>
+                  <div>
+                    <div class="gh-card__name">Sardorbek</div>
+                    <div class="gh-card__handle">@sardorbek</div>
+                  </div>
+                </div>
+                <div class="gh-card__stats">
+                  <div><strong>15+</strong> loyiha</div>
+                  <div><strong>Bot</strong> mutaxassis</div>
+                </div>
+              </div>
+            </div>
+            <div class="workspace__window workspace__window--1" data-depth="0.2">
+              <div class="float-win">
+                <div class="float-win__bar"><span></span><span></span><span></span></div>
+                <div class="float-win__body">
+                  <div class="float-win__line"></div>
+                  <div class="float-win__line short"></div>
+                  <div class="float-win__line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="workspace__window workspace__window--2" data-depth="0.18">
+              <div class="float-win float-win--accent">
+                <div class="float-win__bar"><span></span><span></span><span></span></div>
+                <div class="float-win__body">
+                  <div class="float-win__metric">95</div>
+                  <div class="float-win__label">React</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span>Pastga</span>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Men haqimda</span>
+          <h2 class="section__title">Men haqimda</h2>
+          <p class="section__subtitle">Men telegram bot va web saytlar ishlab chiquvchi, dasturlashni pul uchun emas qiziqqanim uchun tanlagan dasturchiman</p>
+        </div>
+        <div class="about__grid">
+          <div class="about__visual reveal">
+            <div class="about__image-wrap">
+              <div class="about__image">
+                <div class="about__image-placeholder"><span>S</span></div>
+                <div class="about__image-glow"></div>
+              </div>
+              <div class="about__status">
+                <span class="about__status-dot"></span>
+                Hozir ochiqman
+              </div>
+            </div>
+            <div class="about__values">
+              <div class="about__value">
+                <span class="about__value-icon">⟨⟩</span>
+                <div>
+                  <strong>Codni tozalash</strong>
+                  <p>Toza, o'qiladigan va barqaror kod yozaman.</p>
+                </div>
+              </div>
+              <div class="about__value">
+                <span class="about__value-icon">◈</span>
+                <div>
+                  <strong>Yaxshi Dizayn</strong>
+                  <p>Har bir interfeys estetik va foydali bo'lishi kerak.</p>
+                </div>
+              </div>
+              <div class="about__value">
+                <span class="about__value-icon">◎</span>
+                <div>
+                  <strong>Jamoa bilan ishlash</strong>
+                  <p>Hamkorlik va ochiq muloqot — muvaffaqiyat kaliti.</p>
+                </div>
+              </div>
+              <div class="about__value">
+                <span class="about__value-icon">🚀</span>
+                <div>
+                  <strong>Idea yaratish</strong>
+                  <p>Yangi g'oyalarni tezda mahsulotga aylantiraman.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about__content reveal">
+            <div class="about__story glass">
+              <h3>Mening hikoyam</h3>
+              <p>Men 2022 yilda (15 yoshimda) dasturlashga qiziqishni boshlaganman, telefonda YouTubedan telegram bot yasash va kanal yuritish shunga o'xshash mavzularga qiziqib ko'p videolar ko'rardim.</p>
+              <p>2023 yilda telegramda Najot ta'lim o'quv markazi konkurs qilgan va konkursda Foundation kursini yutib olganman va o'rganib chiqqanman, ana shundan keyin dasturlashga bo'lgan qiziqishim kuchayib ketgan.</p>
+              <p>2024–2025 yillarda har xil o'quv markazlarga borib dasturlash va ingliz tilini o'rgandim, o'zimda qiziqishim kuchli bo'lgani sabab ko'plab loyihalar qildim, hozirda meni o'zim va juda ko'pchilik Dasturchi sifatida biladi.</p>
+            </div>
+            <div class="about__mission glass">
+              <h3>Men nima qila olaman?</h3>
+              <div class="about__services-mini">
+                <div class="about__service-item" style="display:flex;gap:1rem;margin-bottom:1rem;">
+                  <span style="color:var(--secondary);font-size:1.2rem;">⟨⟩</span>
+                  <div>
+                    <strong>Telegram bot</strong>
+                    <p style="font-size:0.9rem;color:var(--text-secondary);">Har xil companyalar uchun mukammal telegram bot yasay olaman.</p>
+                  </div>
+                </div>
+                <div class="about__service-item" style="display:flex;gap:1rem;margin-bottom:1rem;">
+                  <span style="color:var(--purple);font-size:1.2rem;">◈</span>
+                  <div>
+                    <strong>UI/UX Dizayn</strong>
+                    <p style="font-size:0.9rem;color:var(--text-secondary);">Brendingiz uchun mukammal dizayn qilib bera olaman.</p>
+                  </div>
+                </div>
+                <div class="about__service-item" style="display:flex;gap:1rem;">
+                  <span style="color:#f97316;font-size:1.2rem;">🚀</span>
+                  <div>
+                    <strong>Frontend va Backend</strong>
+                    <p style="font-size:0.9rem;color:var(--text-secondary);">Mukammal darajada saytni Frontend va Backend qismini dasturlay olaman.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Ko'nikmalar</span>
+          <h2 class="section__title">Texnologiyalar</h2>
+          <p class="section__subtitle">Ishlatadigan asosiy vositalar va darajam</p>
+        </div>
+        <div class="skills-bars glass reveal" style="padding:1.75rem;margin-bottom:2.5rem;">
+          <div class="skill-bar" style="margin-bottom:1.25rem;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;font-size:0.9rem;">
+              <span>React &amp; Next.js</span><span>95%</span>
+            </div>
+            <div style="height:8px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;">
+              <div class="skill-bar__fill" data-width="95" style="height:100%;width:0%;background:linear-gradient(90deg,#2563EB,#00D9FF);border-radius:4px;transition:width 1.2s ease;"></div>
+            </div>
+          </div>
+          <div class="skill-bar" style="margin-bottom:1.25rem;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;font-size:0.9rem;">
+              <span>TypeScript</span><span>90%</span>
+            </div>
+            <div style="height:8px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;">
+              <div class="skill-bar__fill" data-width="90" style="height:100%;width:0%;background:linear-gradient(90deg,#3B82F6,#60A5FA);border-radius:4px;transition:width 1.2s ease;"></div>
+            </div>
+          </div>
+          <div class="skill-bar" style="margin-bottom:1.25rem;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;font-size:0.9rem;">
+              <span>Tailwind CSS</span><span>92%</span>
+            </div>
+            <div style="height:8px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;">
+              <div class="skill-bar__fill" data-width="92" style="height:100%;width:0%;background:linear-gradient(90deg,#06B6D4,#22D3EE);border-radius:4px;transition:width 1.2s ease;"></div>
+            </div>
+          </div>
+          <div class="skill-bar" style="margin-bottom:1.25rem;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;font-size:0.9rem;">
+              <span>Node.js &amp; Express</span><span>85%</span>
+            </div>
+            <div style="height:8px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;">
+              <div class="skill-bar__fill" data-width="85" style="height:100%;width:0%;background:linear-gradient(90deg,#22C55E,#4ADE80);border-radius:4px;transition:width 1.2s ease;"></div>
+            </div>
+          </div>
+          <div class="skill-bar" style="margin-bottom:1.25rem;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;font-size:0.9rem;">
+              <span>UI/UX Design</span><span>88%</span>
+            </div>
+            <div style="height:8px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;">
+              <div class="skill-bar__fill" data-width="88" style="height:100%;width:0%;background:linear-gradient(90deg,#A855F7,#EC4899);border-radius:4px;transition:width 1.2s ease;"></div>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;font-size:0.9rem;">
+              <span>Git &amp; GitHub</span><span>93%</span>
+            </div>
+            <div style="height:8px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;">
+              <div class="skill-bar__fill" data-width="93" style="height:100%;width:0%;background:linear-gradient(90deg,#64748B,#94A3B8);border-radius:4px;transition:width 1.2s ease;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills__grid">
+          <div class="skill-card"><div class="skill-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div><div class="skill-card__name">HTML / CSS</div><div class="skill-card__years">3+ yil</div><div class="skill-card__glow"></div></div>
+          <div class="skill-card"><div class="skill-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="skill-card__name">JavaScript</div><div class="skill-card__years">3+ yil</div><div class="skill-card__glow"></div></div>
+          <div class="skill-card"><div class="skill-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></div><div class="skill-card__name">React</div><div class="skill-card__years">2+ yil</div><div class="skill-card__glow"></div></div>
+          <div class="skill-card"><div class="skill-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg></div><div class="skill-card__name">Next.js</div><div class="skill-card__years">2+ yil</div><div class="skill-card__glow"></div></div>
+          <div class="skill-card"><div class="skill-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div><div class="skill-card__name">Node.js</div><div class="skill-card__years">2+ yil</div><div class="skill-card__glow"></div></div>
+          <div class="skill-card"><div class="skill-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div><div class="skill-card__name">Telegram Bot</div><div class="skill-card__years">3+ yil</div><div class="skill-card__glow"></div></div>
+          <div class="skill-card"><div class="skill-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 17l-6.5 3.5 2-7L2 9h7l3-7z"/></svg></div><div class="skill-card__name">UI/UX</div><div class="skill-card__years">2+ yil</div><div class="skill-card__glow"></div></div>
+          <div class="skill-card"><div class="skill-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg></div><div class="skill-card__name">MySQL / PHP</div><div class="skill-card__years">2+ yil</div><div class="skill-card__glow"></div></div>
+          <div class="skill-card"><div class="skill-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="12" r="2"/><circle cx="6" cy="18" r="2"/><path d="M8 6h8M8 18h8"/></svg></div><div class="skill-card__name">Git</div><div class="skill-card__years">3+ yil</div><div class="skill-card__glow"></div></div>
+          <div class="skill-card"><div class="skill-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="skill-card__name">Figma</div><div class="skill-card__years">2+ yil</div><div class="skill-card__glow"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Loyihalar</span>
+          <h2 class="section__title">Portfolio</h2>
+          <p class="section__subtitle">So'nggi ishlarim va loyihalarim to'plami</p>
+        </div>
+        <div class="projects__filters reveal" role="tablist">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Barcha</button>
+          <button class="filter-btn" data-filter="bot" role="tab" aria-selected="false">Botlar</button>
+          <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web</button>
+          <button class="filter-btn" data-filter="mobile" role="tab" aria-selected="false">Mobile</button>
+          <button class="filter-btn" data-filter="design" role="tab" aria-selected="false">Dizayn</button>
+        </div>
+        <div class="projects__grid" id="projectsGrid">
+          <article class="project-card reveal" data-category="bot">
+            <div class="project-card__media"><div class="project-card__image"><div class="project-card__placeholder project-card__placeholder--bot"><span>Xisoblovchi Bot</span></div></div>
+              <div class="project-card__overlay"><div class="project-card__actions">
+                <a href="#" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Demo</a>
+                <a href="#" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
+              </div></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta"><span class="project-card__year">2025</span><div class="project-card__tags"><span>PHP</span><span>MySQL</span></div></div>
+              <h3>Xisoblovchi Bot</h3>
+              <p>Xisoblovchi bot Telegram Guruhlar uchun.</p>
+            </div>
+          </article>
+          <article class="project-card reveal" data-category="mobile">
+            <div class="project-card__media"><div class="project-card__image"><div class="project-card__placeholder project-card__placeholder--mobile"><span>Prava Tezkor</span></div></div>
+              <div class="project-card__overlay"><div class="project-card__actions">
+                <a href="#" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Demo</a>
+                <a href="#" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
+              </div></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta"><span class="project-card__year">2025</span><div class="project-card__tags"><span>React Native</span><span>Firebase</span><span>Redux</span></div></div>
+              <h3>Prava Tezkor ilovasi</h3>
+              <p>Prava imtixoni uchun testlar.</p>
+            </div>
+          </article>
+          <article class="project-card reveal" data-category="bot">
+            <div class="project-card__media"><div class="project-card__image"><div class="project-card__placeholder project-card__placeholder--bot"><span>Anonim Savollar</span></div></div>
+              <div class="project-card__overlay"><div class="project-card__actions">
+                <a href="#" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Demo</a>
+                <a href="#" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
+              </div></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta"><span class="project-card__year">2024</span><div class="project-card__tags"><span>PHP</span><span>MySQL</span></div></div>
+              <h3>Anonim Savollar 💬</h3>
+              <p>Telegramda anonim suxbatlashish uchun Bot.</p>
+            </div>
+          </article>
+          <article class="project-card reveal" data-category="bot">
+            <div class="project-card__media"><div class="project-card__image"><div class="project-card__placeholder project-card__placeholder--auto"><span>Smart Konst Bot</span></div></div>
+              <div class="project-card__overlay"><div class="project-card__actions">
+                <a href="#" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Demo</a>
+                <a href="#" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
+              </div></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta"><span class="project-card__year">2024</span><div class="project-card__tags"><span>Node.js</span><span>Telegraf</span></div></div>
+              <h3>Smart Konst Bot</h3>
+              <p>Aqlli konstruksiya va yordamchi Telegram bot.</p>
+            </div>
+          </article>
+          <article class="project-card reveal" data-category="web design">
+            <div class="project-card__media"><div class="project-card__image"><div class="project-card__placeholder project-card__placeholder--saas"><span>Portfolio Website</span></div></div>
+              <div class="project-card__overlay"><div class="project-card__actions">
+                <a href="https://yaxshibola.uz" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Demo</a>
+                <a href="#" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
+              </div></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta"><span class="project-card__year">2025</span><div class="project-card__tags"><span>HTML</span><span>CSS</span><span>JS</span></div></div>
+              <h3>Portfolio Website</h3>
+              <p>Shaxsiy portfolio sayti — yaxshibola.uz</p>
+            </div>
+          </article>
+          <article class="project-card reveal" data-category="bot">
+            <div class="project-card__media"><div class="project-card__image"><div class="project-card__placeholder project-card__placeholder--bot"><span>Dilnoza Ovoz Bot</span></div></div>
+              <div class="project-card__overlay"><div class="project-card__actions">
+                <a href="#" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Demo</a>
+                <a href="#" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
+              </div></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta"><span class="project-card__year">2024</span><div class="project-card__tags"><span>Python</span><span>AI</span></div></div>
+              <h3>Dilnoza Ovoz Bot</h3>
+              <p>Ovozli xabarlar va AI yordamida ishlovchi bot.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Tajriba</span>
+          <h2 class="section__title">Mening tajribam</h2>
+          <p class="section__subtitle">Mening hikoyam va tajribamni ko'ring</p>
+          <a href="#contact" class="btn btn--primary" style="margin-top:1.25rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <span>Yuklab olish CV</span>
+          </a>
+        </div>
+        <div class="experience__timeline">
+          <div class="exp-item reveal">
+            <div class="exp-item__marker"></div>
+            <div class="exp-item__card glass">
+              <div class="exp-item__header">
+                <div>
+                  <h3>Mustaqil Full Stack Dasturchi</h3>
+                  <span class="exp-item__company">Freelance / Shaxsiy loyihalar</span>
+                </div>
+                <span class="exp-item__date">2024 — Hozir</span>
+              </div>
+              <p>Telegram botlar, web saytlar va mobil ilovalar ishlab chiqish. Mijozlar bilan to'g'ridan-to'g'ri ishlash, to'liq mahsulot yetkazib berish.</p>
+              <div class="exp-item__tags"><span>Telegram Bot</span><span>React</span><span>Node.js</span><span>UI/UX</span></div>
+            </div>
+          </div>
+          <div class="exp-item reveal">
+            <div class="exp-item__marker"></div>
+            <div class="exp-item__card glass">
+              <div class="exp-item__header">
+                <div>
+                  <h3>Dasturlash o'quvchisi</h3>
+                  <span class="exp-item__company">O'quv markazlari + Najot Ta'lim</span>
+                </div>
+                <span class="exp-item__date">2023 — 2025</span>
+              </div>
+              <p>Najot Ta'lim Foundation kursini yutib o'qidim. Keyin turli o'quv markazlarda dasturlash va ingliz tilini chuqur o'rgandim, ko'plab amaliy loyihalar bajardim.</p>
+              <div class="exp-item__tags"><span>Foundation</span><span>Frontend</span><span>Backend</span></div>
+            </div>
+          </div>
+          <div class="exp-item reveal">
+            <div class="exp-item__marker"></div>
+            <div class="exp-item__card glass">
+              <div class="exp-item__header">
+                <div>
+                  <h3>O'zini o'zi o'qitish</h3>
+                  <span class="exp-item__company">YouTube + Amaliyot</span>
+                </div>
+                <span class="exp-item__date">2022</span>
+              </div>
+              <p>15 yoshimda dasturlashga qiziqib, telefon orqali YouTubedan Telegram bot yasashni o'rgandim. Birinchi botlarim shu yerda boshlangan.</p>
+              <div class="exp-item__tags"><span>Telegram</span><span>Self-taught</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Bog'lanish</span>
+          <h2 class="section__title">Men bilan bog'lanish</h2>
+          <p class="section__subtitle">Sizga telegram bot yoki web-sayt kerakmi?, menga qandaydir taklifingiz bormi? bog'laning:</p>
+        </div>
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <div class="contact__channels">
+              <a href="mailto:Sardorbektexno@gmail.com" class="contact__channel">
+                <div class="contact__channel-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                </div>
+                <div><strong>Email</strong><span>Sardorbektexno@gmail.com</span></div>
+              </a>
+              <a href="tel:+998940890907" class="contact__channel">
+                <div class="contact__channel-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div><strong>Telefon</strong><span>+998 94 089 0907</span></div>
+              </a>
+              <a href="https://t.me/sardorbek" class="contact__channel" target="_blank" rel="noopener">
+                <div class="contact__channel-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.11 4.11L3.4 11.05c-1.2.47-1.19 1.13-.22 1.42l4.56 1.42 1.75 5.37c.23.7.42.97 1.09.97.71 0 .92-.33 1.28-.72l2.04-2.13 4.24 3.13c.78.43 1.34.21 1.54-.72L22.9 5.4c.33-1.32-.5-1.92-1.79-1.29z"/></svg>
+                </div>
+                <div><strong>Telegram</strong><span>@sardorbek</span></div>
+              </a>
+              <div class="contact__channel" style="cursor:default;">
+                <div class="contact__channel-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div><strong>Lokatsiya</strong><span>Namangan, O'zbekiston</span></div>
+              </div>
+            </div>
+            <div class="contact__location">
+              <span class="contact__location-dot"></span>
+              Namangan · Butun dunyo bo'ylab ishlayman
+            </div>
+          </div>
+
+          <form class="contact__form glass reveal" id="contactForm" novalidate>
+            <h3 style="font-family:var(--font-display);font-size:1.25rem;margin-bottom:1.25rem;">Xabar yuboring</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div class="form-group">
+                <input type="text" id="name" name="name" required autocomplete="name" placeholder=" " />
+                <label for="name">Ismingiz</label>
+                <span class="form-error" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder=" " />
+                <label for="email">Email</label>
+                <span class="form-error" aria-live="polite"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" id="subject" name="subject" required placeholder=" " />
+              <label for="subject">Maqsad</label>
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+              <label for="message">Xabar</label>
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full magnetic" id="submitBtn">
+              <span>Xabar yuborish</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+            <div class="form-success" id="formSuccess" hidden>Xabaringiz yuborildi! Tez orada javob beraman.</div>
+            <div id="formError" hidden style="margin-top:1rem;padding:0.85rem 1rem;background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.25);border-radius:10px;color:#f87171;font-size:0.9rem;text-align:center;">Xatolik yuz berdi. Iltimos, qayta urinib ko'ring yoki Telegram orqali yozing.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__divider" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer__top">
+        <a href="#home" class="footer__logo">
+          <span class="nav__logo-mark">S</span>
+          <span>Sardorbek</span>
+        </a>
+        <nav class="footer__nav" aria-label="Footer">
+          <a href="#about">Men haqimda</a>
+          <a href="#projects">Loyihalar</a>
+          <a href="#skills">Ko'nikmalar</a>
+          <a href="#contact">Bog'lanish</a>
+        </nav>
+        <div class="footer__social">
+          <a href="https://github.com/sardorbek" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </a>
+          <a href="https://t.me/sardorbek" aria-label="Telegram" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.11 4.11L3.4 11.05c-1.2.47-1.19 1.13-.22 1.42l4.56 1.42 1.75 5.37c.23.7.42.97 1.09.97.71 0 .92-.33 1.28-.72l2.04-2.13 4.24 3.13c.78.43 1.34.21 1.54-.72L22.9 5.4c.33-1.32-.5-1.92-1.79-1.29z"/></svg>
+          </a>
+          <a href="mailto:Sardorbektexno@gmail.com" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Sardorbek. Barcha huquqlar himoyalangan.</p>
+        <button class="footer__top-btn" id="backToTop" aria-label="Yuqoriga">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
